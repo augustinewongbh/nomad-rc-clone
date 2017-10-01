@@ -6,7 +6,7 @@ const Hero = props => (
     style={{
       width: "100%",
       height: "auto",
-      maxHeight: "50vh",
+      maxHeight: "65vh",
       display: "block",
       backgroundImage: `url(${props.image})`,
       backgroundPosition: "center",

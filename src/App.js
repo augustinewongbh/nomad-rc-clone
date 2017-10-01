@@ -5,7 +5,7 @@ import Header from "./Components/Header";
 import Hero from "./Components/Hero";
 import Paragraph from "./Components/Paragraph";
 import ContactForm from "./Components/ContactForm";
-
+import Footer from "./Components/Footer";
 import "./App.css";
 
 const styles = theme => ({
@@ -40,6 +40,7 @@ class App extends Component {
           />
           <ContactForm />
         </Paper>
+        <Footer />
       </div>
     );
   }
