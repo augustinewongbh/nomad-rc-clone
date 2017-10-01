@@ -26,7 +26,13 @@ function Footer(props) {
           <Typography type="title">Keep in touch</Typography>
         </Grid>
       </Grid>
-      <Grid container spacing={16} justify="center" align="center">
+      <Grid
+        container
+        spacing={16}
+        justify="center"
+        align="center"
+        style={{ marginBottom: "3em" }}
+      >
         <Grid item>
           <a href="https://www.instagram.com/nomadbouldering">
             <InstaIco />

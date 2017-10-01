@@ -8,6 +8,7 @@ import Toolbar from "material-ui/Toolbar";
 import Typography from "material-ui/Typography";
 import logo from "../Static/logo.png";
 import SideNav from "./SideNav";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {},
@@ -30,7 +31,7 @@ class Header extends Component {
   }
   handleScroll = e => {
     e.srcElement.body.scrollTop > 100
-      ? this.setState({ logoheight: 2, headerPos: "fixed" })
+      ? this.setState({ logoheight: 2, headerPos: "static" }) //temporary change to static from fixed till hero is modded
       : this.setState({ logoheight: 6, headerPos: "static" });
   };
 
@@ -51,11 +52,14 @@ class Header extends Component {
       >
         <Toolbar>
           <SideNav />
+
           <div
             className={classes.flex}
             style={{ width: "100%", height: `${this.state.logoheight}em` }}
           >
-            <img src={logo} alt="logo" style={{ maxHeight: "100%" }} />
+            <Link to="/">
+              <img src={logo} alt="logo" style={{ maxHeight: "100%" }} />
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
