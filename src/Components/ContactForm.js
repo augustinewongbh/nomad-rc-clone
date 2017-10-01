@@ -10,7 +10,8 @@ const styles = theme => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
-    width: "100%"
+    width: "100%",
+    textAlign: "center"
   },
   button: {
     margin: "24px 16px"
@@ -97,7 +98,7 @@ class ContactForm extends Component {
             <Grid item xs={12}>
               <Button
                 raised
-                color="primary"
+                color="accent"
                 type="submit"
                 className={classes.button}
               >

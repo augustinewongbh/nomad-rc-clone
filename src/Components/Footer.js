@@ -8,7 +8,9 @@ import { InstaIco, FbIco, EmailIco } from "../Static/svg";
 import Paragraph from "./Paragraph";
 const styles = theme => ({
   root: {
-    padding: "1em"
+    padding: "1em",
+    backgroundColor: "#ed5a00",
+    textAlign: "center"
   },
   rowText: {
     textAlign: "left"
@@ -26,51 +28,89 @@ function Footer(props) {
       </Grid>
       <Grid container spacing={16} justify="center" align="center">
         <Grid item>
-          <a href="#">
+          <a href="https://www.instagram.com/nomadbouldering">
             <InstaIco />
           </a>
         </Grid>
         <Grid item>
-          <FbIco />
+          <a href="https://www.facebook.com/Nomadboulderinggym">
+            <FbIco />
+          </a>
         </Grid>
         <Grid item>
-          <EmailIco />
+          <a href="mailto:hello@nomadbouldering.com">
+            <EmailIco />
+          </a>
         </Grid>
       </Grid>
-      <Grid className={classes.rowText} container direction="row" spacing={20}>
+      <Grid
+        className={classes.rowText}
+        container
+        direction="row"
+        justify="center"
+        spacing={24}
+      >
         <Grid item xs={12} sm={4}>
-          <h3>Address</h3>
-          <p>
+          <Typography type="title">Address</Typography>
+          <Typography type="body2">
             NOMAD Bouldering Gym Unit 7/12 Chester St, Annandale Sydney NSW 2038<br />Corner
             of Gehrig Lane & Chester Street
-          </p>
+          </Typography>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <h3>Hours</h3>
-          <p>
-            MON - FRI: 6:30 - 21:30<br />
-            SAT - SUN: 8:00 - 20:00<br />
-            QUEEN'S BIRTHDAY + LABOUR DAY: 9:30-21:30<br />
+          <Typography type="title">Hours</Typography>
+          <Typography type="body2">
+            Mon - Fri: 6:30 - 21:30<br />
+            Sat - Sun: 8:00 - 20:00<br />
+            Queen's Birthday + Labour Day: 9:30-21:30<br />
             CLOSED: 25, 26 Dec & 1 Jan
-          </p>
+          </Typography>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <h3>Contact</h3>
-          <p>
+          <Typography type="title">Contact</Typography>
+          <Typography type="body2">
             NOMAD Bouldering Gym<br />
             Phone: (02) 9565 4584<br />
-            Email: hello@nomadbouldering.com<br />
+            Email:{" "}
+            <a
+              style={{
+                color: "#000",
+                cursor: "pointer",
+                textDecoration: "none",
+                fontStyle: "italic"
+              }}
+              href="mailto:hello@nomadbouldering.com"
+            >
+              hello@nomadbouldering.com
+            </a>
+            <br />
             Instagram:{" "}
-            <a href="https://www.instagram.com/nomadbouldering">
+            <a
+              style={{
+                color: "#000",
+                cursor: "pointer",
+                textDecoration: "none",
+                fontStyle: "italic"
+              }}
+              href="https://www.instagram.com/nomadbouldering"
+            >
               nomadbouldering
             </a>
             <br />
             Facebook:{" "}
-            <a href="https://www.facebook.com/Nomadboulderinggym">
+            <a
+              style={{
+                color: "#000",
+                cursor: "pointer",
+                textDecoration: "none",
+                fontStyle: "italic"
+              }}
+              href="https://www.facebook.com/Nomadboulderinggym"
+            >
               nomadboulderinggym
             </a>
             <br />
-          </p>
+          </Typography>
         </Grid>
       </Grid>
     </footer>

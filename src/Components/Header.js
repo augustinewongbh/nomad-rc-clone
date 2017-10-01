@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import AppBar from "material-ui/AppBar";
@@ -6,34 +6,61 @@ import IconButton from "material-ui/IconButton";
 import MenuIcon from "material-ui-icons/Menu";
 import Toolbar from "material-ui/Toolbar";
 import Typography from "material-ui/Typography";
-
+import logo from "../Static/logo.png";
 import SideNav from "./SideNav";
 
 const styles = theme => ({
-  root: {
-    width: "100%",
-    display: "block"
-  },
+  root: {},
   flex: {
-    flex: 1
+    flex: "auto",
+    flexGrow: "initial",
+    textAlign: "center",
+    padding: "1em 0"
   },
   menuButton: {}
 });
 
-function Header(props) {
-  const classes = props.classes;
-  return (
-    <header className={classes.root}>
-      <AppBar position="static">
+class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      logoheight: 6,
+      headerPos: "static"
+    };
+  }
+  handleScroll = e => {
+    e.srcElement.body.scrollTop > 100
+      ? this.setState({ logoheight: 2, headerPos: "fixed" })
+      : this.setState({ logoheight: 6, headerPos: "static" });
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
+  render() {
+    const { classes } = this.props;
+    return (
+      <AppBar
+        className={classes.root}
+        style={{ backgroundColor: "#FAFAFA" }}
+        position={this.state.headerPos}
+      >
         <Toolbar>
           <SideNav />
-          <Typography type="title" color="inherit" className={classes.flex}>
-            Nomad
-          </Typography>
+          <div
+            className={classes.flex}
+            style={{ width: "100%", height: `${this.state.logoheight}em` }}
+          >
+            <img src={logo} alt="logo" style={{ maxHeight: "100%" }} />
+          </div>
         </Toolbar>
       </AppBar>
-    </header>
-  );
+    );
+  }
 }
 
 Header.propTypes = {
