@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-
+import Cafebar from "./Pages/Cafebar";
+import Classes from "./Pages/Classes";
+import Prices from "./Pages/Prices";
 import {
   withStyles,
   MuiThemeProvider,
@@ -31,6 +33,9 @@ const App = () => (
     <MuiThemeProvider theme={theme}>
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
+      <Route path="/cafebar" component={Cafebar} />
+      <Route path="/classes" component={Classes} />
+      <Route path="/prices" component={Prices} />
     </MuiThemeProvider>
   </Router>
 );

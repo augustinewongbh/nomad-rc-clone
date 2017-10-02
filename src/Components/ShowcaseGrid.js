@@ -3,13 +3,15 @@ import { withStyles } from "material-ui/styles";
 import { GridList, GridListTile } from "material-ui/GridList";
 
 const styles = {
-  root: {}
+  tile: {
+    width: "600px"
+  }
 };
 const imgArray = [...Array(11).keys()];
 function ShowcaseGrid(props) {
   const { classes } = props;
   return (
-    <GridList cols={4} cellHeight={110}>
+    <GridList className={classes.tile} cols={4} cellHeight="auto" spacing={16}>
       {imgArray.map(i => (
         <GridListTile key={i} cols={1}>
           <img

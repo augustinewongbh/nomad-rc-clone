@@ -103,6 +103,21 @@ function Home(props) {
             </Typography>
           </Grid>
           <Grid item xs={12}>
+            <Typography
+              type="title"
+              color="accent"
+              align="left"
+              style={{ fontSize: "2em", fontWeight: "600" }}
+            >
+              Nomad Community
+            </Typography>
+          </Grid>
+          <Grid
+            container
+            align="center"
+            justify="center"
+            style={{ padding: "2em 1em" }}
+          >
             <ShowcaseGrid />
           </Grid>
         </Grid>
