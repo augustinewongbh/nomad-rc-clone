@@ -6,6 +6,7 @@ import About from "./Pages/About";
 import Cafebar from "./Pages/Cafebar";
 import Classes from "./Pages/Classes";
 import Prices from "./Pages/Prices";
+import Groups from "./Pages/Groups";
 import {
   withStyles,
   MuiThemeProvider,
@@ -36,6 +37,7 @@ const App = () => (
       <Route path="/cafebar" component={Cafebar} />
       <Route path="/classes" component={Classes} />
       <Route path="/prices" component={Prices} />
+      <Route path="/groups" component={Groups} />
     </MuiThemeProvider>
   </Router>
 );
