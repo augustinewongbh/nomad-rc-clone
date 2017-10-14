@@ -7,6 +7,7 @@ import Cafebar from "./Pages/Cafebar";
 import Classes from "./Pages/Classes";
 import Prices from "./Pages/Prices";
 import Groups from "./Pages/Groups";
+import Journey from "./Pages/Journey";
 import {
   withStyles,
   MuiThemeProvider,
@@ -30,16 +31,19 @@ const styles = theme => ({
 });
 
 const App = () => (
-  <Router>
-    <MuiThemeProvider theme={theme}>
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/cafebar" component={Cafebar} />
-      <Route path="/classes" component={Classes} />
-      <Route path="/prices" component={Prices} />
-      <Route path="/groups" component={Groups} />
-    </MuiThemeProvider>
-  </Router>
+  <MuiThemeProvider theme={theme}>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/journey" component={Journey} />
+        <Route path="/about" component={About} />
+        <Route path="/cafebar" component={Cafebar} />
+        <Route path="/classes" component={Classes} />
+        <Route path="/prices" component={Prices} />
+        <Route path="/groups" component={Groups} />
+      </Switch>
+    </Router>
+  </MuiThemeProvider>
 );
 
 export default withStyles(theme)(App);

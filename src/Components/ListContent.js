@@ -29,16 +29,7 @@ function ListContent(props) {
           <ListItemText primary="Journey" />
         </Link>
       </ListItem>
-      <ListItem button className={classes.root}>
-        <Link className={classes.linkStyle} to="/Prices">
-          <ListItemText primary="Prices" />
-        </Link>
-      </ListItem>
-      <ListItem className={classes.linkStyle} button className={classes.root}>
-        <Link className={classes.linkStyle} to="/Classes">
-          <ListItemText primary="Classes" />
-        </Link>
-      </ListItem>
+      
       <ListItem button className={classes.root}>
         <Link className={classes.linkStyle} to="/Groups">
           <ListItemText primary="Groups" />

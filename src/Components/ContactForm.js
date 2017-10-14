@@ -23,17 +23,17 @@ class ContactForm extends Component {
     super(props);
     this.state = {
       firstName: "",
-      lastName: "",
+      email: "",
       message: ""
     };
   }
   handleSubmit = e => {
     e.preventDefault();
     console.log(e);
-    alert(JSON.stringify(this.state));
+    alert("Thanks for contacting us!");
     this.setState({
       firstName: "",
-      lastName: "",
+      email: "",
       message: ""
     });
     return;
@@ -58,7 +58,7 @@ class ContactForm extends Component {
         }}
       >
         <form className={classes.container} onSubmit={this.handleSubmit}>
-          <Grid container spacing={24}>
+          <Grid container spacing={8}>
             <Grid item xs={12} sm={6}>
               <TextField
                 id="firstName"
@@ -67,20 +67,23 @@ class ContactForm extends Component {
                 value={this.state.firstName}
                 margin="normal"
                 fullWidth
+                required
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                id="lastName"
-                label="Last Name"
-                onChange={this.handleChange("lastName")}
-                value={this.state.lastName}
+                id="email"
+                label="Email"
+                onChange={this.handleChange("email")}
+                value={this.state.email}
                 margin="normal"
                 fullWidth
+                required
+                type="email"
               />
             </Grid>
           </Grid>
-          <Grid container spacing={24}>
+          <Grid container spacing={8}>
             <Grid item xs={12}>
               <TextField
                 id="message"
@@ -91,6 +94,7 @@ class ContactForm extends Component {
                 margin="normal"
                 onChange={this.handleChange("message")}
                 value={this.state.message}
+                required
               />
             </Grid>
           </Grid>
